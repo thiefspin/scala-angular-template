@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
+import {LoginRequest} from '../auth/LoginRequest';
+import {Session} from '../auth/Session';
+import {AuthenticationService} from '../authentication.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +12,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  searchForm: FormGroup;
+  submitted = false;
+
+  constructor(
+    private formBuilder: FormBuilder
+  ) {
+  }
 
   ngOnInit() {
+    this.searchForm = this.formBuilder.group({
+      text: ['', Validators.required]
+    });
+  }
+
+  get controls() {
+    return this.searchForm.controls;
+  }
+
+  onSubmit() {
+    console.log('You searched for: ' + this.controls.text.value);
   }
 
 }

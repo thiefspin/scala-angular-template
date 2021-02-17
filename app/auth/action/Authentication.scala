@@ -12,7 +12,7 @@ import scala.concurrent.Future
 @Singleton
 class Authentication @Inject()() {
 
-  private val KEY = "my-key"
+  val KEY: String = "my-key"
 
   private lazy val authFailed = AuthResult(authOk = false, None)
 
