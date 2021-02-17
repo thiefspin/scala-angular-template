@@ -55,4 +55,5 @@ dist := (dist dependsOn `ui-prod-build`).value
 stage := (stage dependsOn `ui-prod-build`).value
 
 // Execute frontend test task prior to play test execution.
-test := ((test in Test) dependsOn `ui-test`).value
+//Enable this if you want to run UI test with "sbt test"
+//test := ((test in Test) dependsOn `ui-test`).value
