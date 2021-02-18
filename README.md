@@ -45,17 +45,18 @@ Here is the list of all the technologies used in the example:
 
 ## Getting started
 
-First of all get the code on your machine (Preferably by using `git clone` but I'm not gonna judge here).
-You will also need:
+First of all get the code on your machine (Preferably by using `git clone` but I'm not gonna judge here). You will also
+need:
+
 * Some JDK (8 or 11)
-* SBT 
+* SBT
 * NodeJS (includes NPM)
 * The angular CLI
 
 ### The Database
 
-The example includes a `docker-compose.yml` file to easily allow you to spin up a database. This will also
-run all the sql scripts needed to create the structure as well as a dummy user for you.
+The example includes a `docker-compose.yml` file to easily allow you to spin up a database. This will also run all the
+sql scripts needed to create the structure as well as a dummy user for you.
 
 If this tickles your fancy and you have docker installed on your machine just run the following command in the root
 directory of the project.
@@ -80,8 +81,9 @@ following:
 * Also if you do this I assume you know what you're doing so I'm just giving the basics
 
 ### Running the application
-You obviously need Java and SBT installed (But you know this). Never hurts to double check though.
-You also need `npm`, `ng` and `node` installed 
+
+You obviously need Java and SBT installed (But you know this). Never hurts to double check though. You also need `npm`
+, `ng` and `node` installed
 
 ```bash
 java -version
@@ -98,7 +100,8 @@ v15.6.0
 
 #### Development Mode
 
-This will start the Play dev server. It will also run `npm install` in the UI directory to make sure all the node modules are there
+This will start the Play dev server. It will also run `npm install` in the UI directory to make sure all the node
+modules are there
 
 ```bash
 sbt clean compile run
@@ -111,11 +114,15 @@ You can now visit `http://localhost:4200/` and you should see a login page.
 There are 2 options here:
 
 ##### Docker
-`sbt clean stage docker:publishLocal` will build you a docker image that you can run via `docker run -it -p 9000:9000 image_id`.
- This exposes the application via `http://localhost:9000/`. Or whatever you make the port mapping. If you do that I assume you know what you're doing.
+
+`sbt clean stage docker:publishLocal` will build you a docker image that you can run
+via `docker run -it -p 9000:9000 image_id`. This exposes the application via `http://localhost:9000/`. Or whatever you
+make the port mapping. If you do that I assume you know what you're doing.
 
 ##### Staging
-`sbt clean stage` will build you a script located in `./target/universal/stage/bin/platform-template` (.bat for Windows) that you can just execute which will also expose the application on `http://localhost:9000/`
+
+`sbt clean stage` will build you a script located in `./target/universal/stage/bin/platform-template` (.bat for Windows)
+that you can just execute which will also expose the application on `http://localhost:9000/`
 
 ### Using the application
 
@@ -124,11 +131,15 @@ The default username and password to log in is:
 `username: johndoe@gmail.com` \
 `password: password`
 
-
-
 ### Just some notes
+
 * This was tested on a Macbook Pro 16 (Intel) and Macbook air (M1) but linux should be fine
 * This should work on Windows although it was not tested on Windows so beware there might be some weirdness.
-* This was mostly done on JDK 8 although JDK 11 should be okay. There were linking issues on the M1 chip with OpenJdk@11 although AdoptOpendJdk 11 was fine :man_shrugging:
+* This was mostly done on JDK 8 although JDK 11 should be okay. There were linking issues on the M1 chip with OpenJdk@11
+  although AdoptOpendJdk 11 was fine :man_shrugging:
 
+## Contributing
+
+Please do. The more the merrier. Improvements are always welcome. Pop me a Pull Request if you think you have something
+cool to add.
 
